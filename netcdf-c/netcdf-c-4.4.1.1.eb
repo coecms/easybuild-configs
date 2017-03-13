@@ -13,3 +13,4 @@ dependencies = [
 
 easyblock = 'ConfigureMake'
 configopts = '--enable-pnetcdf --enable-mmap'
+runtest = 'check'

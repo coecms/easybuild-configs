@@ -9,11 +9,11 @@ description = "C and C++ compiler from Intel"
 toolchain = {'name': 'dummy', 'version': 'dummy'}
 
 dependencies = [
-    ('intel-mkl/%s'%version, EXTERNAL_MODULE),
-    ('fftw3-mkl/%s'%version, EXTERNAL_MODULE),
+    ('intel-mkl/%(version)s', EXTERNAL_MODULE),
+    ('fftw3-mkl/%(version)s', EXTERNAL_MODULE),
     ]
 
-moduleclass = 'compiler'
+moduleclass = 'numlib'
 
 modextravars = {
     'EBROOTIMKL': '$::env(INTEL_MKL_ROOT)/..'

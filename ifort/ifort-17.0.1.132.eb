@@ -1,4 +1,3 @@
-easyblock = "BuildEnv"
 
 name = 'ifort'
 version = '17.0.1.132'
@@ -13,3 +12,4 @@ dependencies = [('intel-fc/%s'%version, EXTERNAL_MODULE)]
 moduleclass = 'compiler'
 
 hidden = True
+easyblock = "BuildEnv"

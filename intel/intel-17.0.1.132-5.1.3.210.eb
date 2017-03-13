@@ -13,10 +13,12 @@ description = """Intel C/C++ and Fortran compilers, Intel MPI & Intel MKL."""
 toolchain = {'name': 'dummy', 'version': 'dummy'}
 
 dependencies = [
-    ('intel-cc/%s'%compver, EXTERNAL_MODULE),
-    ('intel-fc/%s'%compver, EXTERNAL_MODULE),
-    ('intel-mkl/%s'%compver, EXTERNAL_MODULE),
-    ('intel-mpi/%s'%mpiver, EXTERNAL_MODULE),
+    ('icc',compver),
+    ('ifort',compver),
+    ('imkl',compver),
+    ('impi',mpiver,'',('iccifort',compver)),
 ]
+
+hidden = True
 
 moduleclass = 'toolchain'

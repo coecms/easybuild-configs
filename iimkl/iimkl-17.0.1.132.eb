@@ -1,0 +1,21 @@
+easyblock = "Toolchain"
+
+compver = '17.0.1.132'
+
+name = 'iimkl'
+version = compver
+
+homepage = 'http://software.intel.com/en-us/intel-cluster-toolkit-compiler/'
+description = """Intel C/C++ and Fortran compilers & Intel MKL."""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+dependencies = [
+    ('icc', compver),
+    ('ifort', compver),
+    ('imkl', compver),
+]
+
+hidden = True
+
+moduleclass = 'toolchain'
