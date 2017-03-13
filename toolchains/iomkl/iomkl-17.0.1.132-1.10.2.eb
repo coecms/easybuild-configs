@@ -1,0 +1,21 @@
+easyblock = "Toolchain"
+
+compver = '17.0.1.132'
+mpiver  = '1.10.2'
+
+name = 'iomkl'
+version = '%s-%s'%(compver, mpiver)
+
+homepage = 'http://software.intel.com/en-us/intel-cluster-toolkit-compiler/'
+description = """Intel C/C++ and Fortran compilers, Intel MKL & Open MPI."""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+dependencies = [
+    ('intel-cc/%s'%compver, EXTERNAL_MODULE),
+    ('intel-fc/%s'%compver, EXTERNAL_MODULE),
+    ('intel-mkl/%s'%compver, EXTERNAL_MODULE),
+    ('openmpi/%s'%mpiver, EXTERNAL_MODULE),
+]
+
+moduleclass = 'toolchain'
