@@ -1,0 +1,11 @@
+name = 'hdf5'
+version = '1.8.18'
+homepage = 'https://support.hdfgroup.org/HDF5/'
+description = 'HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data.'
+toolchain = {'name': 'iomkl', 'version': '17.0.1.132-1.10.2'}
+
+source_urls = ['https://support.hdfgroup.org/ftp/HDF5/current18/src']
+sources = ['hdf5-%(version)s.tar.bz2']
+
+easyblock = 'ConfigureMake'
+configopts = '--enable-parallel --enable-fortran --enable-fortran2003 --enable-cxx --enable-unsupported --enable-production CC=mpicc FC=mpif90'

@@ -1,0 +1,22 @@
+easyblock = "BuildEnv"
+
+name = 'imkl'
+version = '17.0.1.132'
+
+homepage = 'http://software.intel.com/en-us/intel-compilers/'
+description = "C and C++ compiler from Intel"
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+dependencies = [
+    ('intel-mkl/%s'%version, EXTERNAL_MODULE),
+    ('fftw3-mkl/%s'%version, EXTERNAL_MODULE),
+    ]
+
+moduleclass = 'compiler'
+
+modextravars = {
+    'EBROOTIMKL': '$::env(INTEL_MKL_ROOT)/..'
+}
+
+hidden = True
