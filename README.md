@@ -7,12 +7,12 @@ Using
     module use /g/data3/hh5/modules/all/Core
     module load EasyBuild
 
-    eb --configfiles=easybuild.configs $LIB.eb
+    eb --configfiles=easybuild.configs --robot .  $LIB.eb
 
 Toolchains
 ----------
 
-The following toolchains are available in the `toolchains` directory
+The following toolchains are available:
 
  * iimkl: icc, ifort, mkl
 
@@ -20,5 +20,3 @@ The following toolchains are available in the `toolchains` directory
 
  * iomkl: icc, ifort, mkl, open mpi
 
-These make use of packages in the `system` directory, each of which is a
-wrapper around a NCI module
