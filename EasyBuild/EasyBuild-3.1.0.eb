@@ -31,8 +31,18 @@ sources = [
     'easybuild-easyconfigs-%(version)s.tar.gz',
 ]
 
-# EasyBuild is a (set of) Python packages, so it depends on Python
-# usually, we want to use the system Python, so no actual Python dependency is listed
-allow_system_deps = [('Python', SYS_PYTHON_VERSION)]
+dependencies = [
+    ('python/2.7.11', EXTERNAL_MODULE),
+    ('modules','3.2.10')
+    ]
 
 moduleclass = 'tools'
+
+modextravars = {
+   'EASYBUILD_PREFIX': '/short/$::env(PROJECT)/$::env(USER)/easybuild',
+   'EASYBUILD_UMASK': '002',
+   'EASYBUILD_MODULES_TOOL': 'EnvironmentModulesC',
+   'EASYBUILD_MODULE_SYNTAX': 'Tcl',
+   'EASYBUILD_MODULE_NAMING_SCHEME': 'HierarchicalMNS',
+}
+

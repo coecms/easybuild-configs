@@ -1,0 +1,20 @@
+name = 'modules'
+version = '3.2.10'
+description = 'Manage your shell environment variables and aliases '
+homepage = 'http://modules.sourceforge.net/'
+
+source_urls = ['https://downloads.sourceforge.net/project/modules/Modules/modules-%(version)s']
+sources = [SOURCELOWER_TAR_GZ]
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+easyblock = 'ConfigureMake'
+configopts = '--disable-versioning --exec-prefix=%(installdir)s'
+
+sanity_check_paths = {'files': ['bin/modulecmd'], 'dirs': ['bin']}
+
+modtclfooter = """
+if { ! [ module-info mode remove ] } {
+   set-alias module "eval `$root/bin/modulecmd bash $*`" 
+}
+"""

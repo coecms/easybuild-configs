@@ -1,3 +1,4 @@
+easyblock = "BuildEnv"
 
 name = 'ifort'
 version = '17.0.1.132'
@@ -7,9 +8,9 @@ description = "C and C++ compiler from Intel"
 
 toolchain = {'name': 'dummy', 'version': 'dummy'}
 
-dependencies = [('intel-fc/%s'%version, EXTERNAL_MODULE)]
+dependencies = [('intel-fc/%(version)s', EXTERNAL_MODULE)]
 
 moduleclass = 'compiler'
 
 hidden = True
-easyblock = "BuildEnv"
+
