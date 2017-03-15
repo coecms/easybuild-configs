@@ -1,0 +1,19 @@
+easyblock = "BuildEnv"
+
+name = 'intel-cc'
+version = '17.0.1.132'
+
+homepage = 'http://software.intel.com/en-us/intel-compilers/'
+description = "Intel C/C++ Compiler"
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+dependencies = [('icc',version)]
+
+moduleclass = 'base'
+
+modtclfooter = """
+    # Load the NCI module
+    set ModulesCurrentModulefile /apps/Modules/modulefiles/%(name)s/%(version)s
+    source $ModulesCurrentModulefile
+"""
