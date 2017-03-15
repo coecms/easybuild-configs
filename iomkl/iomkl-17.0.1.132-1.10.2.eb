@@ -16,6 +16,8 @@ dependencies = [
     ('ifort', compver),
     ('imkl', compver),
     ('OpenMPI', mpiver, '', ('iccifort', compver)),
+    ('iimkl', compver),
+    ('openmpi', mpiver, '', ('iccifort', compver)),
 ]
 
 hidden = True

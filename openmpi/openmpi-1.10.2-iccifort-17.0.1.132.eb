@@ -1,0 +1,19 @@
+easyblock = "BuildEnv"
+
+name = 'openmpi'
+version = '1.10.2'
+
+homepage = ''
+description = ""
+
+toolchain = {'name': 'iccifort', 'version': '17.0.1.132'}
+
+dependencies = [('OpenMPI',version)]
+
+moduleclass = 'base'
+
+modtclfooter = """
+    # Load the NCI module
+    set ModulesCurrentModulefile /apps/Modules/modulefiles/%(name)s/%(version)s
+    source $ModulesCurrentModulefile
+"""

@@ -13,10 +13,12 @@ description = """Intel C/C++ and Fortran compilers, Intel MPI & Intel MKL."""
 toolchain = {'name': 'dummy', 'version': 'dummy'}
 
 dependencies = [
-    ('icc',compver),
-    ('ifort',compver),
-    ('imkl',compver),
+    ('icc', compver),
+    ('ifort', compver),
+    ('imkl', compver),
+    ('iimkl',compver),
     ('impi',mpiver,'',('iccifort',compver)),
+    ('intel-mpi',mpiver,'',('iccifort',compver)),
 ]
 
 hidden = True

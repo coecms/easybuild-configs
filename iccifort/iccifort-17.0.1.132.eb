@@ -13,6 +13,8 @@ toolchain = {'name': 'dummy', 'version': 'dummy'}
 dependencies = [
     ('intel-cc', compver),
     ('intel-fc', compver),
+    ('icc', compver),
+    ('ifort', compver),
 ]
 
 hidden = True

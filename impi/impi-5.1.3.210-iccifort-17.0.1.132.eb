@@ -8,8 +8,6 @@ description = "C and C++ compiler from Intel"
 
 toolchain = {'name': 'iccifort', 'version': '17.0.1.132'}
 
-dependencies = [('intel-mpi/%s'%version, EXTERNAL_MODULE)]
-
 moduleclass = 'mpi'
 
 hidden = True
