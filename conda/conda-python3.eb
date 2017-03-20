@@ -1,0 +1,25 @@
+easyblock = "Bundle"
+
+name = 'conda'
+version = 'python3'
+
+homepage = ""
+description = "Anaconda Python Environment"
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+modextravars = {
+    'CONDA_DEFAULT_ENV': version,
+    }
+
+modtclfooter = """
+    if [ file isdirectory "/short" ] {
+        setenv CONDA_ENVS_PATH /short/$::env(PROJECT)/$::env(USER)/conda/envs
+    } else {
+        setenv CONDA_ENVS_PATH /local/$::env(PROJECT)/$::env(USER)/conda/envs
+    }
+
+    set prefix /g/data3/hh5/public/apps/miniconda3/envs/%(version)s
+    setenv CONDA_PREFIX $prefix
+    prepend-path PATH $prefix/bin
+"""

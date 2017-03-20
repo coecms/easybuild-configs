@@ -1,0 +1,15 @@
+easyblock = "BuildEnv"
+
+name = 'gcc'
+version = '6.2.0'
+versionprefix = 'eb'
+
+homepage = ''
+description = "GNU C/C++ Compiler"
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+dependencies = [('GCC',version), ('gcc/%(version)s', EXTERNAL_MODULE)]
+
+moduleclass = 'base'
+
+dontcreateinstalldir = True

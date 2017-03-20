@@ -1,0 +1,16 @@
+easyblock = "Bundle"
+
+name = 'conda'
+version = 'version'
+
+homepage = ""
+description = "Anaconda Python Environment"
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+hidden = True
+dontcreateinstalldir = True
+
+modtclfooter = """
+   set ModulesVersion analysis3
+"""

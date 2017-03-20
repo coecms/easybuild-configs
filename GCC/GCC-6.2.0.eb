@@ -1,0 +1,17 @@
+easyblock = "Toolchain"
+
+name = 'GCC'
+version = '6.2.0'
+
+homepage = 'http://software.intel.com/en-us/intel-compilers/'
+description = "C and C++ compiler from Intel"
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+dependencies = [('gcc/%(version)s', EXTERNAL_MODULE)]
+
+dontcreateinstalldir = True
+hidden = True
+
+moduleclass = 'compiler'
+

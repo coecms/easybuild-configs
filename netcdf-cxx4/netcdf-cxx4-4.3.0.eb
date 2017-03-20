@@ -1,0 +1,19 @@
+name = 'netcdf-cxx4'
+version = '4.3.0'
+homepage = 'http://www.unidata.ucar.edu/software/netcdf/'
+description = 'NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data.'
+
+toolchain = {'name': 'iomkl', 'version': '17.0.1.132-1.10.2'}
+
+github_account = 'Unidata'
+source_urls = [GITHUB_SOURCE]
+sources = ['v%(version)s.tar.gz']
+
+dependencies = [
+    ('netcdf-c','4.4.1.1'),
+    ]
+
+easyblock = 'ConfigureMake'
+runtest = 'check'
+
+sanity_check_paths = {'files': ['lib/libnetcdf_c++4.so', 'include/netcdf'], 'dirs': ['include', 'lib']}
