@@ -1,0 +1,18 @@
+name = 'netcdf-cxx'
+version = '4.2'
+homepage = 'http://www.unidata.ucar.edu/software/netcdf/'
+description = 'NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data.'
+
+toolchain = {'name': 'GCC', 'version': '6.2.0'}
+
+source_urls = ['ftp://ftp.unidata.ucar.edu/pub/netcdf']
+sources = [SOURCELOWER_TAR_GZ]
+
+dependencies = [
+    ('netcdf-c','4.4.1.1'),
+    ]
+
+easyblock = 'ConfigureMake'
+runtest = 'check'
+
+sanity_check_paths = {'files': ['lib/libnetcdf_c++.so', 'include/netcdf.hh'], 'dirs': ['include', 'lib']}

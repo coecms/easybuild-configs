@@ -7,9 +7,11 @@ homepage = ""
 description = "Anaconda Python Environment"
 
 toolchain = {'name': 'dummy', 'version': 'dummy'}
+builddependencies = [('conda','analysis3')]
 
 hidden = True
 dontcreateinstalldir = True
+moduleloadnoconflict = True
 
 modtclfooter = """
    set ModulesVersion analysis3

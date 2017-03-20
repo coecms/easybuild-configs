@@ -11,8 +11,8 @@ description = """Intel C/C++ and Fortran compilers."""
 toolchain = {'name': 'dummy', 'version': 'dummy'}
 
 dependencies = [
-    ('intel-cc', compver),
-    ('intel-fc', compver),
+    ('intel-cc', 'eb%s'%compver),
+    ('intel-fc', 'eb%s'%compver),
     ('icc', compver),
     ('ifort', compver),
 ]

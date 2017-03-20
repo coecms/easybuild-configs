@@ -15,3 +15,4 @@ checksums = ['682a0e78d6966ca37c7446d4ab4cc2a1']
 runtest = 'check'
 
 moduleclass = 'numlib'
+with_mpi = False

@@ -1,0 +1,16 @@
+name = 'netcdf-c'
+version = '4.4.1.1'
+homepage = 'http://www.unidata.ucar.edu/software/netcdf/'
+description = 'NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data.'
+toolchain = {'name': 'GCC', 'version': '6.2.0'}
+
+source_urls = ['https://github.com/Unidata/%(name)s/archive']
+sources = ['v%(version)s.tar.gz']
+
+dependencies = [
+    ('hdf5','1.8.18'),
+    ]
+
+easyblock = 'ConfigureMake'
+configopts = '--enable-pnetcdf --enable-mmap'
+runtest = 'check'
