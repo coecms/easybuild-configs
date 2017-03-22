@@ -4,10 +4,15 @@ EasyBuild configs for ARCCSS at NCI
 Using
 -----
 
-    module use /g/data3/hh5/modules/all/Core
+Build all missing packages
+
+    module use /g/data3/hh5/public/apps/easybuild/modulefiles/all/Core
     module load EasyBuild
 
-    eb --configfiles=easybuild.configs --robot .  $LIB.eb
+    eb --configfiles=easybuild.configs --robot $PWD  $PWD
+
+Intention is to link `/g/data3/hh5/public/apps/easybuild/modulefiles/all/Core` to
+`/g/data3/hh5/public/modules` for ease of use.
 
 Toolchains
 ----------
@@ -24,7 +29,7 @@ The following toolchains are available:
 
 To build with a different toolchain:
 
-    eb ... --try-toolchain-name=intel
+    eb ... --try-toolchain=GCC,6.2.0
 
 Implementation Details
 ----------------------
@@ -38,9 +43,9 @@ sole function of setting up the module naming heirachy. They are hidden in the
 module list and shouldn't be used directly by users.
 
 The NCI names 'intel-cc', 'intel-fc', 'intel-mpi' and 'openmpi' load the
-Easybuild modules to set the correct paths and then load the original NCI
+Easybuild modules to set the correct `$MODULEPATH` and then load the original NCI
 modules.
 
-This means that if a user runs `module load intel-fc` their `MODULEPATH` will
+This means that if a user runs `module load intel-fc` their `$MODULEPATH` will
 be updated to include `Compiler/Intel/$INTELFC_VERSION` and they will have
 access to `ifort`.

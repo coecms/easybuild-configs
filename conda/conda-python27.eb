@@ -8,6 +8,8 @@ description = "Anaconda Python Environment"
 
 toolchain = {'name': 'dummy', 'version': 'dummy'}
 
+dontcreateinstalldir = True
+
 modextravars = {
     'CONDA_DEFAULT_ENV': version,
     }
