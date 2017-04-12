@@ -1,0 +1,17 @@
+easyblock = "BuildEnv"
+
+name = 'openmpi'
+version = '1.6.5'
+versionprefix = 'eb'
+
+homepage = ''
+description = ""
+
+toolchain = {'name': 'iccifort', 'version': '17.0.1.132'}
+
+dependencies = [('OpenMPI',version), ('openmpi/%(version)s', EXTERNAL_MODULE)]
+
+moduleclass = 'base'
+
+dontcreateinstalldir = True
+

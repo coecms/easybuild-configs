@@ -1,0 +1,13 @@
+easyblock = "BuildEnv"
+
+name = 'OpenMPI'
+version = '1.6.5'
+
+homepage = ''
+description = ""
+
+toolchain = {'name': 'iccifort', 'version': '17.0.1.132'}
+
+moduleclass = 'mpi'
+
+hidden = True
