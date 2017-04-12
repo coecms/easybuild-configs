@@ -1,0 +1,14 @@
+name = 'gcom'
+version = '4.4'
+homepage = 'https://code.metoffice.gov.uk'
+description = 'Unified Model MPI Wrapper'
+
+toolchain = {'name': 'iomkl', 'version': '17.0.1.132-1.10.2'}
+
+easyblock = 'CMakeMakeSvn'
+
+sources = ['svn+https://access-svn.nci.org.au/svn/GCOM/branches/dev/saw562/gcom4.4_cmake@230']
+
+dependencies = [('cmake', EXTERNAL_MODULE)]
+
+sanity_check_paths = {'files': ['lib/libgcom.a'], 'dirs': ['lib','include']}
