@@ -1,15 +1,19 @@
-easyblock = 'Bundle'
-name = 'netcdf'
-version = '4.4.1.1'
-
+name = 'netcdf-fortran'
+version = '4.4.4'
 homepage = 'http://www.unidata.ucar.edu/software/netcdf/'
 description = 'NetCDF is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data.'
 
 toolchain = {'name': 'iomkl', 'version': '17.0.1.132-1.10.2'}
 
+github_account = 'Unidata'
+source_urls = [GITHUB_SOURCE]
+sources = ['v%(version)s.tar.gz']
+
 dependencies = [
-    ('netcdf-c', version),
-    ('netcdf-cxx', '4.2'),
-    ('netcdf-cxx4', '4.3.0'),
-    ('netcdf-fortran', '4.4.4'),
+    ('netcdf-c','4.4.1.1'),
     ]
+
+easyblock = 'ConfigureMake'
+runtest = 'check'
+
+sanity_check_paths = {'files': ['lib/libnetcdff.so'], 'dirs': ['include', 'lib']}

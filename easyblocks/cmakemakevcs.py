@@ -25,7 +25,7 @@ from easybuild.framework.easyconfig.easyconfig import letter_dir_for
 import tempfile
 import os.path
 
-class CMakeMakeSvn(CMakeMake):
+class CMakeMakeVcs(CMakeMake):
     """
     Download source using svn
     """
@@ -49,6 +49,21 @@ class CMakeMakeSvn(CMakeMake):
             run_cmd("svn export %s"%filename[4:], path = tempdir)
             run_cmd("tar czvf %s ."%fullpath, path = tempdir)
             rmtree2(tempdir)
+            return fullpath
+
+        elif filename.startswith('git+'):
+            # Export the repository and convert to a tarball
+            (url, treeish) = filename[4:].split()
+
+            download_path = os.path.join(source_paths()[0], letter_dir_for(self.name), self.name)
+            tarfile = treeish+'.tar'
+            fullpath = os.path.join(download_path, tarfile)
+
+            if os.path.exists(fullpath):
+                return fullpath
+
+            mkdir(download_path, parents=True)
+            run_cmd("git archive --format=tar --prefix=src/ --output='%s' --remote='%s' '%s'"%(fullpath, url, treeish))
             return fullpath
 
         else:

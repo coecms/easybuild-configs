@@ -1,0 +1,14 @@
+name = 'oasis3-mct'
+version = '3'
+homepage = 'https://verc.enes.org/oasis'
+description = 'Oasis coupler'
+
+toolchain = {'name': 'iomkl', 'version': '17.0.1.132-1.10.2'}
+
+easyblock = 'CMakeMakeVcs'
+
+sources = ['git+git@bitbucket.org:ScottWales/oasis3-mct cmake']
+
+dependencies = [('cmake', EXTERNAL_MODULE), ('netcdf-fortran', '4.4.4')]
+
+sanity_check_paths = {'files': ['lib/libpsmile.MPI1.a'], 'dirs': ['lib','include']}
