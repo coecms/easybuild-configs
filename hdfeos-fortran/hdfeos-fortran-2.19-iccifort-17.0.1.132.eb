@@ -1,0 +1,21 @@
+name = 'hdfeos-fortran'
+version = '2.19'
+homepage = 'http://hdfeos.org/index.php'
+description = ''
+toolchain = {'name': 'iccifort', 'version': '17.0.1.132'}
+
+source_urls = ['ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/']
+sources = [('HDF-EOS2.19v1.00.tar.Z', 'tar xzf %s')]
+
+dependencies = [
+    ('hdf4/4.2.11',EXTERNAL_MODULE),
+    ('szip/2.1',EXTERNAL_MODULE),
+    ]
+
+easyblock = 'ConfigureMake'
+configopts = ['HDF4_CC=$CC CC=$(which h4cc) CPPFLAGS=-Df2cFortran  --with-szlib=$SZIP']
+
+sanity_check_paths = {
+    'files': ['lib/libhdfeos.a'],
+    'dirs': ['lib'],
+    }
