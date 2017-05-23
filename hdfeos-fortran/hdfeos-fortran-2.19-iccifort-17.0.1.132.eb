@@ -8,7 +8,7 @@ source_urls = ['ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/']
 sources = [('HDF-EOS2.19v1.00.tar.Z', 'tar xzf %s')]
 
 dependencies = [
-    ('hdf4/4.2.11',EXTERNAL_MODULE),
+    ('hdf4/4.2.6',EXTERNAL_MODULE),
     ('szip/2.1',EXTERNAL_MODULE),
     ]
 
