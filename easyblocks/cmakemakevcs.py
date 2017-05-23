@@ -59,9 +59,6 @@ class CMakeMakeVcs(CMakeMake):
             tarfile = treeish+'.tar'
             fullpath = os.path.join(download_path, tarfile)
 
-            if os.path.exists(fullpath):
-                return fullpath
-
             mkdir(download_path, parents=True)
             run_cmd("git archive --format=tar --prefix=src/ --output='%s' --remote='%s' '%s'"%(fullpath, url, treeish))
             return fullpath

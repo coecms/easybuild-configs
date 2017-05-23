@@ -11,4 +11,4 @@ sources = ['git+git@bitbucket.org:ScottWales/oasis3-mct cmake']
 
 dependencies = [('cmake', EXTERNAL_MODULE), ('netcdf-fortran', '4.4.4')]
 
-sanity_check_paths = {'files': ['lib/libpsmile.MPI1.a'], 'dirs': ['lib','include']}
+sanity_check_paths = {'files': ['lib/libpsmile.MPI1.so'], 'dirs': ['lib','include']}
