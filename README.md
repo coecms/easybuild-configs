@@ -4,6 +4,23 @@ EasyBuild configs for ARCCSS at NCI
 Using
 -----
 
+    module use /g/data3/hh5/public/modules
+
+    # Activate easybuild
+    module load easybuild
+
+    # Load a compiler and MPI (easybuild versions start with 'eb')
+    # Loading a compiler will enable the modules built with that compiler
+
+    module load intel-fc # default eb17.0.1.132
+    module load openmpi/eb1.10.2
+
+    # Load a library
+    module load netcdff
+
+Building Packages
+-----------------
+
 Build all missing packages
 
     module use /g/data3/hh5/public/apps/easybuild/modulefiles/all/Core
