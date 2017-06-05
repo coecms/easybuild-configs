@@ -1,0 +1,25 @@
+name = 'gcom'
+version = '6.2'
+homepage = 'https://code.metoffice.gov.uk/trac/gcom'
+description = 'Unified Model communications library'
+
+toolchain = {'name': 'iomkl', 'version': '17.0.1.132-1.10.2'}
+
+easyblock = 'Fcm'
+builddependencies = [('fcm',EXTERNAL_MODULE)]
+
+fcm_config = 'fcm:gcom.xm_tr/fcm-make/gcom.cfg@vn%(version_major_minor)s'
+
+build_environment = {
+    'GCOM_SOURCE': 'fcm:gcom.xm_tr@vn%(version_major_minor)s',
+    'GCOM_MACHINE': 'nci_raijin_ifort_mpp',
+    'ACTION': 'preprocess build',
+    'ROSE_TASK_MIRROR_TARGET': 'localhost',
+    'REMOTE_ACTION': '',
+    'DATE': '',
+}
+
+sanity_check_paths = {
+    'files': ['lib/libgcom.a'],
+    'dirs': ['lib'],
+    }
