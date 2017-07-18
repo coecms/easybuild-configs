@@ -1,0 +1,23 @@
+name = 'runofftools'
+version = '0.1'
+homepage = 'https://github.com/OceansAus/runoff_tools'
+description = 'kdtree based tools to regrid runoff for use in MOM ocean models'
+
+toolchain = {'name': 'iccifort', 'version': '17.0.1.132'}
+
+github_account = 'OceansAus'
+source_urls = [GITHUB_SOURCE]
+sources = ['http://github.com/OceansAus/runoff_tools/archive/master.tar.gz']
+
+dependencies = [
+    ('netcdf/4.3.3.1', EXTERNAL_MODULE),
+    ]
+
+easyblock = 'ConfigureMake'
+skipsteps = ['configure', 'install']
+buildininstalldir = True
+parallel = 1
+modextrapaths = {'PATH': 'runoff_tools-master'}
+
+# sanity_check_paths = {'files': [ 'create_runoff_nn', 'make_mask', 'create_runoff_weights', 'create_model_coast', 'process_runoff', 'create_runoff_weights_spread', 'create_model_wet' ], 'dirs': [ 'scripts' ] }
+sanity_check_paths = {'files': [ 'runoff_tools-master/create_runoff_nn'], 'dirs': [ 'runoff_tools-master/scripts' ] }
