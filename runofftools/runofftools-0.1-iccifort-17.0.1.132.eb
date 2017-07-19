@@ -19,5 +19,4 @@ buildininstalldir = True
 parallel = 1
 modextrapaths = {'PATH': 'runoff_tools-master'}
 
-# sanity_check_paths = {'files': [ 'create_runoff_nn', 'make_mask', 'create_runoff_weights', 'create_model_coast', 'process_runoff', 'create_runoff_weights_spread', 'create_model_wet' ], 'dirs': [ 'scripts' ] }
-sanity_check_paths = {'files': [ 'runoff_tools-master/create_runoff_nn'], 'dirs': [ 'runoff_tools-master/scripts' ] }
+sanity_check_paths = {'files': [ 'runoff_tools-master/create_runoff_nn', 'runoff_tools-master/make_mask', 'runoff_tools-master/create_runoff_weights', 'runoff_tools-master/create_model_coast', 'runoff_tools-master/process_runoff', 'runoff_tools-master/create_runoff_weights_spread', 'runoff_tools-master/create_model_wet' ], 'dirs': [ '' ] }
